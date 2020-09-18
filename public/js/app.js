@@ -21,9 +21,9 @@ fetch(`/weather?address=${location}`,
             messageOne.textContent = data.error  
         }
         else{
-            messageOne.textContent = data.forecast_info.loc
+            messageOne.textContent = `Location : ${data.forecast_info.loc_name} ${data.forecast_info.loc_region} ${data.forecast_info.loc_country} Localtime:${data.forecast_info.curr_time}`
 
-            w_info = `You are in ${data.forecast_info.loc} and There is ${data.forecast_info.temp} celicus outside and Chance of rain is ${data.forecast_info.prec} Percent` 
+            w_info = `Current Temperature: ${data.forecast_info.temp} celicus  Weather Description: ${data.forecast_info.weat_des}  Chance of rain : ${data.forecast_info.prec} Percent` 
 
 
         messageTwo.textContent = w_info
